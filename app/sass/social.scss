@@ -1,0 +1,88 @@
+.social {
+  a {
+    display: inline-block;
+    margin: 2px 5px;
+    &:link, &:visited, &:hover, &:focus, &:active {
+      text-decoration: none;
+    }
+  }
+  i {
+    font-size: 30px;
+    line-height: 30px;
+    vertical-align: middle;
+    margin: auto;
+  }
+  .contact {
+    &:hover, &:focus, &:active {
+      color: $social-contact-color;
+    }
+  }
+  .twitter {
+    &:hover, &:focus, &:active {
+      color: $social-twitter-color;
+    }
+  }
+  .google-plus {
+    &:hover, &:focus, &:active {
+      color: $social-googleplus-color;
+    }
+  }
+  .facebook {
+    &:hover, &:focus, &:active {
+      color: $social-facebook-color;
+    }
+  }
+  &.circle {
+    padding: 0px;
+    & > div {
+      padding: 0px;
+      text-align: center;
+    }
+    a {
+      margin: 0px;
+      width: $social-circle-size;
+      height: $social-circle-size;
+      padding: 0px 5px;
+      border-radius: 50%;
+      border: 2px #FFFFFF solid;
+      text-align: center;
+    }
+    i {
+      width: $social-circle-size - (2 * $social-circle-padding);
+      font-size: $social-circle-size - (2 * $social-circle-padding);
+      line-height: $social-circle-size;
+    }
+    .contact {
+      color: $social-contact-color;
+      background-color: transparent;
+      &:hover, &:focus, &:active {
+        color: $social-default-color;
+        background-color: rgba($social-contact-color, $social-circle-hover-opacity);
+      }
+    }
+    .twitter {
+      color: $social-twitter-color;
+      background-color: transparent;
+      &:hover, &:focus, &:active {
+        color: $social-default-color;
+        background-color: rgba($social-twitter-color, $social-circle-hover-opacity);
+      }
+    }
+    .google-plus {
+      color: $social-googleplus-color;
+      background-color: transparent;
+      &:hover, &:focus, &:active {
+        color: $social-default-color;
+        background-color: rgba($social-googleplus-color, $social-circle-hover-opacity);
+      }
+    }
+    .facebook {
+      color: $social-facebook-color;
+      background-color: transparent;
+      &:hover, &:focus, &:active {
+        color: $social-default-color;
+        background-color: rgba($social-facebook-color, $social-circle-hover-opacity);
+      }
+    }
+  }
+}

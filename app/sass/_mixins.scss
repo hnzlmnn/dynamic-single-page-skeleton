@@ -1,0 +1,20 @@
+@function invert($color) {
+  @if (lightness($color) > 50) {
+    @return darken($color, lightness($color));
+  } @else {
+    @return lighten($color, lightness($color));
+  }
+}
+
+@mixin clear-margin {
+  margin: 0px;
+}
+
+@mixin clear-padding {
+  padding: 0px;
+}
+
+@mixin clearmp {
+  @include clear-margin();
+  @include clear-padding();
+}

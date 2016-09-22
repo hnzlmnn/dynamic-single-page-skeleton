@@ -1,0 +1,11 @@
+{
+  "name": "gh-pages-hnzlmnn",
+  "private": true,
+  "dependencies": {
+    "bootstrap-sass": "~3.3.3",
+    "jquery": "~1.11.0",
+    "modernizr": "~2.8.1",
+    "rivets": "^0.8.1"
+  },
+  "devDependencies": {}
+}

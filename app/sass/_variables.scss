@@ -1,0 +1,31 @@
+@import "bootstrapvariables";
+
+$image-url: "../img/";
+$icon-font-path: "../fonts/";
+
+$text-color-inv: invert($text-color);
+
+$sidebar-width: 280px;
+
+$logo-margin-lr: 80px;
+$logo-small-width: 42px;
+$logo-border-color: $brand-primary;
+$logo-border-hover-color: $brand-accent;
+
+$header-height: $navbar-height;
+$header-background-color: $navbar-default-bg;
+$header-active-color: $brand-accent;
+$header-color: $brand-primary;
+$header-hover-color: $light-lighter;
+
+$footer-height: 100px;
+$footer-background-color: $body-bg;
+
+$social-circle-size:      46px;
+$social-circle-padding:   10px;
+$social-circle-hover-opacity: 0.6;
+$social-default-color:    $light-lighter;
+$social-contact-color:    $brand-accent;
+$social-twitter-color:    #00acee;
+$social-googleplus-color: #e93f2e;
+$social-facebook-color:   #3b5998;

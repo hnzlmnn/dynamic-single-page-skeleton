@@ -1,0 +1,34 @@
+.header {
+  .navbar-brand {
+    padding: (($header-height - $logo-small-width) / 2) 10px;
+    & > * {
+        vertical-align: middle;
+    }
+  }
+  .logo {
+    &.small {
+      margin-right: 10px;
+    }
+  }
+  .navbar-nav {
+    &  > .active {
+      & > a {
+        &:hover {
+          color: $navbar-default-link-hover-color;
+          background-color: $navbar-default-link-hover-bg;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width : $screen-md-min){
+  .header {
+    display: none;
+  }
+  .content {
+    &:before {
+      display: none;
+    }
+  }
+}

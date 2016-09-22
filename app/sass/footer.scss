@@ -1,0 +1,47 @@
+.footer {
+  display: table;
+  width: 100%;
+  height: $footer-height;
+  padding: 20px 10px;
+  background-color: $footer-background-color;
+  background-image: url($image-url + "footer.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  & > div {
+    width: 100%;
+    text-align: center;
+    margin: 2px 0px;
+    display: table-cell;
+    vertical-align: middle;
+  }
+  a {
+    text-align: center;
+    color: $text-color;
+    &:hover, &:focus, &:active {
+      color: $text-color;
+    }
+  }
+  .divider {
+    position: relative;
+    &:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      border-top: 2px solid $navbar-default-color;
+    }
+  }
+}
+
+@media (min-width : $screen-md-min){
+  .footer {
+    display: none;
+  }
+  .content {
+    margin-bottom: 0px;
+    &:after {
+      display: none;
+    }
+  }
+}

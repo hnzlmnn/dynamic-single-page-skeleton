@@ -1,0 +1,54 @@
+
+.logo {
+  display: inline-block;
+  margin: 20px ceil($logo-margin-lr / 2);
+  width: $sidebar-width - $logo-margin-lr;
+  min-width: $sidebar-width - $logo-margin-lr;
+  height: $sidebar-width - $logo-margin-lr;
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 50%;
+  background-image: url($image-url + "logo.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  &.small {
+    width: $logo-small-width;
+    min-width: $logo-small-width;
+    height: $logo-small-width;
+    @include clearmp();
+    border-width: 2px;
+  }
+  img {
+    display: none;
+    height: 100%;
+  }
+}
+
+@media print {
+  .logo {
+    border-color: #FFFFFF;
+    &:hover {
+      border-color: #000000;
+    }
+    img {
+      display: inline;
+    }
+  }
+}
+
+@media screen {
+  .logo {
+    border-color: $logo-border-color;
+    &:hover {
+      border-color: $logo-border-hover-color;
+    }
+  }
+  .invert {
+    .logo {
+      border-color: invert($logo-border-color);
+      &:hover {
+        border-color: invert($logo-border-hover-color);
+      }
+    }
+  }
+}

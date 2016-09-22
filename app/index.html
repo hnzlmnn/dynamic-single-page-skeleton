@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>hnzlmnn</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,user-scalable=1" />
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <!-- build:css css/hnzlmnn.min.css -->
+    <link rel="stylesheet" href="css/hnzlmnn.css">
+    <!-- endbuild -->
+    <!-- build:js js/hnzlmnn.min.js -->
+    <script type="text/javascript" src="js/hnzlmnn.js"></script>
+    <!-- endbuild -->
+    <style>
+      .browsehappy {
+        position: fixed;
+        z-index: 100000;
+        display: table;
+        height: 100%;
+        width: 100%;
+        background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH4AEfESYcJbHJdwAAAAh0RVh0Q29tbWVudAD2zJa/AAAADUlEQVQI12P4z8BQDwAEgAF/gtB8VwAAAABJRU5ErkJggg==');
+      }
+
+      .browsehappy .wrapper {
+        text-align: center;
+        color: #FFFFFF;
+        font-size: 16px;
+        display: table-cell;
+        vertical-align: middle;
+      }
+
+      .browsehappy .wrapper > div {
+        position: relative;
+        padding: 25px 10px;
+        display: inline-block;
+        margin: 0px auto;
+      }
+
+      .browsehappy .hideme {
+        position: absolute;
+        margin: 0px 5px;
+        right: 0px;
+        top: 0px;
+      }
+    </style>
+    <script type="text/html" id="page_404">
+      <h1>The page "{{=it.current}}" doesn't exist!</h1>
+      You can return to the <a href="#/">start page</a>.
+    </script>
+    <script type="text/html" id="page_home">
+      <h1>Router FTW!</h1>
+    </script>
+  </head>
+  <body id="body" class="scroll">
+    <!--[if lte IE 9]>
+      <div class="browsehappy">
+        <div class="wrapper">
+          <div>
+            <div class="hideme"><u><a href="#" onclick="event.preventDefault();$('.browsehappy').hide();">Hide</a></u></div>
+            You are using an <strong>outdated</strong> browser. Please <u><a target="_blank" href="http://browsehappy.com/">upgrade your browser</a></u> to improve your experience.
+          </div>
+        </div>
+      </div>
+    <![endif]-->
+    <!-- Scrolltop -->
+    <a id="scrolltop" href="#" class="scrolltop-hidden"><i class="fa fa-chevron-up"></i></a>
+    <div id="menu" class="">
+    <!--<div id="sidebar" class="invert">-->
+      <ul class="menubackground menuitems">
+        <li>
+          <a class="logo" href="#/"></a>
+          <h3>Malte Heinzelmann</h3>
+        </li>
+        <li>
+          <ul class="links">
+            <li rv-each-link="data.visibleLinks" rv-data-url="link.url" rv-active="data.current">
+              <a rv-link="link.url">{ link.text }</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <div class="container-fluid social circle">
+            <div class="col-xs-3"><a class="contact" rv-mailto="data.social.email" href="#"><i class="fa fa-envelope"></i></a></div>
+            <div class="col-xs-3"><a class="twitter" rv-href="data.social.twitter" target="_blank"><i class="fa fa-twitter"></i></a></div>
+            <div class="col-xs-3"><a class="google-plus" rv-href="data.social.gplus" target="_blank"><i class="fa fa-google-plus"></i></a></div>
+            <div class="col-xs-3"><a class="facebook" rv-href="data.social.facebook" target="_blank"><i class="fa fa-facebook"></i></a></div>
+          </div>
+        </li>
+      </ul>
+      <div class="selectors">
+        <div class="languageselector  dropup" rv-show="(data.languages.length > 1)">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li rv-each-language="data.languages" rv-data-name="language.name" rv-activelanguage="data.language">
+              <a href="#" class="languagelink" rv-data-name="language.name">{ language.readable }</a>
+            </li>
+          </ul>
+        </div>
+        <div class="themeselector  dropup" rv-show="(data.themes.length > 1)">
+          <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-tint" aria-hidden="true"></span> <span class="caret"></span></button>
+          <ul class="dropdown-menu">
+            <li rv-each-theme="data.themes">
+              <a href="#" class="themelink" rv-data-name="theme.name">{ theme.readable }</a>
+            </li>
+          </ul>
+        </div>
+      </div>>
+    </div>
+    <nav class="header navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="navbar-brand">
+            <a class="logo small" href="#/"></a>
+            <font>Malte Heinzelmann</font>
+          </div>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-left">
+            <li rv-each-link="data.visibleLinks" rv-data-url="link.url" rv-active="data.current">
+              <a rv-link="link.url">{ link.text }</a>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown" rv-show="(data.languages.length > 1)">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li rv-each-language="data.languages" rv-data-name="language.name" rv-activelanguage="data.language">
+                  <a href="#" class="languagelink" rv-data-name="language.name">{ language.readable }</a>
+                </li>
+              </ul>
+            </li>
+            <li class="dropdown" rv-show="(data.themes.length > 1)">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-tint" aria-hidden="true"></span> <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li rv-each-theme="data.themes">
+                  <a href="#" class="themelink" rv-data-name="theme.name">{ theme.readable }</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div id="content" class="content"><!-- The router will add the content here --></div>
+    <div class="footer divider">
+      <div class="container">
+        <div class="social circle">
+          <div class="col-xs-3"><a class="contact" rv-mailto="data.social.email" href="#"><i class="fa fa-envelope"></i></a></div>
+          <div class="col-xs-3"><a class="twitter" rv-href="data.social.twitter" target="_blank"><i class="fa fa-twitter"></i></a></div>
+          <div class="col-xs-3"><a class="google-plus" rv-href="data.social.gplus" target="_blank"><i class="fa fa-google-plus"></i></a></div>
+          <div class="col-xs-3"><a class="facebook" rv-href="data.social.facebook" target="_blank"><i class="fa fa-facebook"></i></a></div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>

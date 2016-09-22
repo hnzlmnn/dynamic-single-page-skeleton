@@ -1,0 +1,36 @@
+#scrolltop {
+  position: fixed;
+  width: 50px;
+  bottom: $footer-height + 10px;
+  right: 0px;
+  z-index: 1;
+  padding-bottom: 5px;
+  padding-left: 2px;
+  padding-right: 10px;
+  cursor: pointer;
+  border-bottom-left-radius: 5px;
+  border-top-left-radius: 5px;
+  border: 1px #ffffff solid;
+  border-right: none;
+  font-weight: bold;
+  color: $link-color;
+  background-color: $body-bg;
+  @include transition(all 0.6s ease-in-out);
+  text-decoration: none;
+  &.scrolltop-hidden {
+    right: -60px;
+  }
+  &:hover {
+    color: #ffffff;
+    background-color: $link-color;
+    box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.14), 0px 8px 10px 1px rgba(0, 0, 0, 0.098), 0px 3px 14px 2px rgba(0, 0, 0, 0.084);
+    text-decoration: none;
+  }
+  & > * {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  i {
+    font-size: 40px;
+  }
+}

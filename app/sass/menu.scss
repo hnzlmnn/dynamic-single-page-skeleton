@@ -1,0 +1,187 @@
+#menu {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: $sidebar-width;
+  color: $navbar-default-color;
+  background-color: $navbar-default-bg;
+  background-image: url($image-url + "sidebar.jpg");
+  background-repeat: no-repeat;
+  background-size: auto 100%;
+  .menubackground {
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.55);
+  }
+  h3 {
+    margin: 0px;
+    text-align: center;
+  }
+  ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+  }
+  ul.menuitems {
+    & > li {
+      margin-bottom: 40px;
+    }
+  }
+  ul.links {
+    li {
+      margin: 0px;
+      font-size: $font-size-h4;
+      line-height: $font-size-h4 + 16px;
+      &:hover {
+        cursor: pointer;
+      }
+      &.divider {
+        height: 0px;
+        border-top-width: 1px;
+        border-top-style: solid;
+        margin: 0px;
+        padding: 0px;
+      }
+      a {
+        display: block;
+        padding-left: 10px;
+        color: inherit;
+        background-color: transparent;
+      }
+    }
+  }
+  .selectors {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: $sidebar-width - 20px;
+    .languageselector {
+      float: left;
+    }
+    .themeselector {
+      float: right;
+    }
+    .languageselector, .themeselector {
+      display: inline-block;
+      button {
+        font-weight: 110%;
+        &:hover {
+        }
+      }
+    }
+  }
+}
+
+.content {
+  margin-left: $sidebar-width;
+}
+
+// Hide at small displays
+@media (max-width : $screen-sm-max){
+  #menu {
+    display: none;
+  }
+  .content {
+    margin-left: 0px;
+  }
+}
+
+@media print {
+  #menu, #menu.invert {
+    ul {
+      li {
+        font-color: #000000;
+      }
+      &.links {
+        li {
+          &:hover {
+            color: #FFFFFF;
+            background-color: #000000;
+          }
+          &.active {
+
+          }
+          &.divider {
+            border-top-color: #000000;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen {
+  #menu {
+    ul {
+      li {
+        color: $navbar-default-link-color;
+      }
+      &.links {
+        li {
+          &:hover {
+            color: $navbar-default-link-hover-color;
+            background-color: $navbar-default-link-hover-bg;
+          }
+          &.active {
+            color: $navbar-default-link-active-color;
+            background-color: rgba($navbar-default-link-active-bg,0.7);
+            &:hover {
+              color: $navbar-default-link-hover-color;
+              background-color: $navbar-default-link-hover-bg;
+            }
+          }
+          &.divider {
+            border-top-color: $navbar-default-color;
+          }
+        }
+      }
+    }
+    .languageselector, .themeselector {
+      button {
+        color: $brand-primary;
+        background-color: transparent;
+        &:hover {
+          color: $navbar-default-link-hover-color;
+          background-color: $navbar-default-link-hover-bg;
+        }
+      }
+    }
+    &.invert {
+      ul {
+        li {
+          color: invert($navbar-default-link-color);
+        }
+        &.links {
+          li {
+            &:hover {
+              color: invert($navbar-default-link-hover-color);
+              background-color: invert($navbar-default-link-hover-bg);
+            }
+            &.active {
+              color: invert($navbar-default-link-active-color);
+              background-color: invert($navbar-default-link-active-bg);
+              &:hover {
+                color: invert($navbar-default-link-hover-color);
+                background-color: invert($navbar-default-link-hover-bg);
+              }
+            }
+            &.divider {
+              border-top-color: invert($navbar-default-link-color);
+            }
+          }
+        }
+      }
+      .themeselector {
+        button {
+          color: invert($brand-primary);
+          background-color: transparent;
+          &:hover {
+            color: invert($navbar-default-link-hover-color);
+            background-color: invert($navbar-default-link-hover-bg);
+          }
+        }
+      }
+    }
+  }
+}

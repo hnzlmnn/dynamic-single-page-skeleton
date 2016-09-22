@@ -1,0 +1,8 @@
+{
+  context: {
+    SOCIAL_EMAIL: new email().encode('malte@hnzlmnn.de', ''), //cqbjuxt%40wcqyb.sec
+    SOCIAL_TWITTER: 'https://www.twitter.com/hnzlmnn',
+    SOCIAL_GOOGLEPLUS: 'https://plus.google.com/+MalteHeinzelmann',
+    SOCIAL_FACEBOOK: '#'
+  }
+}

@@ -34,7 +34,7 @@ var fs            = require('fs');
 var configfile  = "appconfig.js";
 var config        = {};
 try {
-  config = require(configfile);
+  config = require("./" + configfile);
 } catch(e) {
   console.error("Couldn't load settings! Please provide a valid nodejs module file with the name " + configfile);
 }
@@ -86,7 +86,7 @@ gulp.task('concatjs', ['lint'], function() {
       'app/js/**/*.js'
     ]);
   if (config.preprocess) {
-    g.pipe(preprocess(config.preprocess));
+    g = g.pipe(preprocess(config.preprocess));
   }
   return g.pipe(concat('hnzlmnn.js'))
     .pipe(gulp.dest(temp('js')));
@@ -129,14 +129,22 @@ gulp.task('compass', function() {
   }));
 });
 
-gulp.task('html', function () {
+gulp.task('html:dist', function () {
   var g = gulp.src('app/*.html');
   if (config.preprocess) {
-    g.pipe(preprocess(config.preprocess));
+    g = g.pipe(preprocess(config.preprocess));
   }
   return g.pipe(useref({ noAssets: true }))
     .pipe(htmlmin({collapseWhitespace: true}))
     .pipe(gulp.dest(dist()));
+});
+
+gulp.task('html:serve', function () {
+  var g = gulp.src('app/*.html');
+  if (config.preprocess) {
+    g = g.pipe(preprocess(config.preprocess));
+  }
+  return g.pipe(gulp.dest(temp()));
 });
 
 gulp.task('fonts', function() {
@@ -170,7 +178,7 @@ gulp.task('browsersync', function(cb) {
   browserSync({
     port: 5000,
     notify: false,
-    logPrefix: 'hnzlmnn',
+    logPrefix: config.logprefix,
     snippetOptions: {},
     // https: true,
     server: {
@@ -181,16 +189,16 @@ gulp.task('browsersync', function(cb) {
 });
 
 gulp.task('dist', ['clean'], function(cb) {
-  runSequence(['scripts', 'styles', 'fonts'], ['html'], ['copy'], cb);
+  runSequence(['scripts', 'styles', 'fonts'], ['html:dist'], ['copy'], cb);
 });
 
 gulp.task('serve', ['clean'], function(cb) {
   gulp.watch("app/sass/**/*.scss", ['styles', reload]);
-  gulp.watch("app/**/*.html", reload);
+  gulp.watch("app/**/*.html", ['html:serve', reload]);
   gulp.watch("app/js/**/*.js", ['scripts', reload]);
   gulp.watch("app/css/**/*.css", ['styles', reload]);
   gulp.watch("app/img/**/*", reload);
-  return runSequence(['styles', 'scripts', 'fonts'], 'browsersync', cb);
+  return runSequence(['html:serve', 'styles', 'scripts', 'fonts'], 'browsersync', cb);
 });
 
 gulp.task('default', ['dist'], function(cb) {

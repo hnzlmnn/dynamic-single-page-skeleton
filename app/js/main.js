@@ -85,10 +85,10 @@
       function viewModel() {
         var self = this;
         self.social = {
-          "email":    '<!-- @echo SOCIAL_EMAIL -->',
-          "twitter":  '<!-- @echo SOCIAL_TWITTER -->',
-          "gplus":    '<!-- @echo SOCIAL_GOOGLEPLUS -->',
-          "facebook": '<!-- @echo SOCIAL_FACEBOOK -->'
+          "email":    '/* @echo SOCIAL_EMAIL */',
+          "twitter":  '/* @echo SOCIAL_TWITTER */',
+          "gplus":    '/* @echo SOCIAL_GOOGLEPLUS */',
+          "facebook": '/* @echo SOCIAL_FACEBOOK */'
         };
         self.themes = [];
         self.language = undefined;
